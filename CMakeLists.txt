@@ -11,9 +11,13 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
 
     # find llvm lib
 #    set(LLVM_DIR "" CACHE PATH "path to llvm cmake dir")
+    set(LLVM_DIR "/opt/homebrew/Cellar/llvm@16/16.0.6_1/lib/cmake/llvm")
+    set(LLVM_INCLUDE_DIR "/opt/homebrew/Cellar/llvm@16/16.0.6_1/include")
+    set(LLVM_BINARY_DIR "/opt/homebrew/Cellar/llvm@16/16.0.6_1")
     find_package(LLVM REQUIRED HINTS "${LLVM_CMAKE_PATH}")
+    find_package(LLVM REQUIRED)
     list(APPEND CMAKE_MODULE_PATH ${LLVM_DIR})
-    include(ChooseMSVCCRT)
+    # include(ChooseMSVCCRT)
 
     include(AddLLVM)
     include(HandleLLVMOptions)

@@ -1964,6 +1964,7 @@ std::optional<UnaryExpr> Parser::ParseUnaryExpr() {
 
 void Parser::ParsePostFixExprSuffix(TokIter beginTokLoc,
                                     PostFixExpr &postFixExpr) {
+  std::cout << "this kind is: " << mTokCursor->getTokenKind() << " " << (mTokCursor->getTokenKind() ==tok::l_paren) << "\n";
   while (IsPostFixExpr(mTokCursor->getTokenKind())) {
     auto tokType = mTokCursor->getTokenKind();
     if (tokType == tok::l_paren) {

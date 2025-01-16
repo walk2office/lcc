@@ -3,3 +3,6 @@
 cmake-build*
 .DS_Store
 bin/
+.cache/
+.vscode/
+build/
